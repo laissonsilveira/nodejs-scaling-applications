@@ -28,7 +28,7 @@ Node.js processes launched with a custom execPath will communicate with the pare
 
 Unlike the fork POSIX system call, `child_process.fork()` does not clone the current process.
 
-[Files example](https://github.com/laissonsilveira/nodejs-advanced/blob/main/nodejs-scaling-applications/fork)
+[Files example](https://github.com/laissonsilveira/nodejs-scaling-applications/blob/main/fork)
 
 ### With Cluster
 
@@ -36,7 +36,7 @@ A single instance of Node.js runs in a single thread. To take advantage of multi
 
 The cluster module allows easy creation of child processes that all share server ports.
 
-[Files example](https://github.com/laissonsilveira/nodejs-advanced/blob/main/nodejs-scaling-applications/cluster)
+[Files example](https://github.com/laissonsilveira/nodejs-scaling-applications/blob/main/cluster)
 
 
 #### How it works
