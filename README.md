@@ -28,7 +28,7 @@ Node.js processes launched with a custom execPath will communicate with the pare
 
 Unlike the fork POSIX system call, `child_process.fork()` does not clone the current process.
 
-[Files example](https://github.com/laissonsilveira/nodejs-scaling-applications/blob/main/fork)
+[Files example](https://github.com/laissonsilveira/nodejs-scaling-applications/blob/main/cloning/fork)
 
 ### With Cluster
 
@@ -36,7 +36,7 @@ A single instance of Node.js runs in a single thread. To take advantage of multi
 
 The cluster module allows easy creation of child processes that all share server ports.
 
-[Files example](https://github.com/laissonsilveira/nodejs-scaling-applications/blob/main/cluster)
+[Files example](https://github.com/laissonsilveira/nodejs-scaling-applications/blob/main/cloning/cluster)
 
 
 #### How it works
@@ -65,3 +65,38 @@ Although a primary use case for the `cluster` module is networking, it can also 
 ### With PM2
 
 Execute `pm2 start app.js -i <number of instance>`
+
+## Database Scaling
+
+## Incorporating a database
+
+[Files example](https://github.com/laissonsilveira/nodejs-scaling-applications/blob/main/database-scaling/incorporating)
+
+## Horizontal partitioning
+
+A partition is a division of a logical database or its constituent elements into distinct independent parts. Database partitioning is normally done for manageability, performance or availability reasons, or for load balancing. It is popular in distributed database management systems, where each partition may be spread over multiple nodes, with users at the node performing local transactions on the partition. This increases performance for sites that have regular transactions involving certain views of data, whilst maintaining availability and security.
+
+![z-axis](https://github.com/laissonsilveira/nodejs-scaling-applications/blob/main/database-scaling/horizontal/z-axis.png)
+
+[Files example](https://github.com/laissonsilveira/nodejs-scaling-applications/blob/main/database-scaling/horizontal)
+
+### When to use
+
+* Too much data
+* More write operations than the server can handle
+* Slow performance
+* Often cheaper to host shards than one database
+
+### How to use
+
+* MongoDB (mongos)
+* Postres (Postgres-XL)
+* MySQL (Fabric, Router)
+* Elasticsearch (Lucene)
+* Redis (Redis Cluster, Amazon ElastiCache for Redis)
+
+## Microservices
+
+This project have 3 services (shows, reservations and orchestration of the 2 others services, named api)
+
+[Project example](https://github.com/laissonsilveira/nodejs-scaling-applications/blob/main/microservices)
