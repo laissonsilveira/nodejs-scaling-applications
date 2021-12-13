@@ -100,3 +100,5 @@ A partition is a division of a logical database or its constituent elements into
 This project have 3 services (shows, reservations and orchestration of the 2 others services, named api)
 
 [Project example](https://github.com/laissonsilveira/nodejs-scaling-applications/blob/main/microservices)
+
+For complete example see my other project [nodejs-micro-services](https://laissonsilveira.github.io/nodejs-micro-services/)

@@ -39,12 +39,12 @@ const app = express()
 
         if (!req.body.count) {
             res.status(500)
-            return res.json({ error: `A ticket count is required to reserve tickets.` })
+            return res.json({ error: `A ticket count is required to reserve tickets.`})
         }
 
         if (!req.body.name) {
             res.status(500)
-            return res.json({ error: `A name is required to reserve tickets.` })
+            return res.json({ error: `A name is required to reserve tickets.`})
         }
 
         // Parse the Count
@@ -55,14 +55,14 @@ const app = express()
 
         if (!show) {
             res.status(500)
-            return res.json({ error: `Cannot find show with id: ${req.body.showID}` })
+            return res.json({ error: `Cannot find show with id: ${req.body.showID}`})
         }
 
         const remainingSeats = show.houseSize - show.reserved
 
         if (remainingSeats < count) {
             res.status(500)
-            return res.json({ error: `cannot reserve ${count} seats. Only ${remainingSeats} remaining.` })
+            return res.json({ error: `cannot reserve ${count} seats. Only ${remainingSeats} remaining.`})
         }
 
         // Hold Seats with Show Service
@@ -73,7 +73,7 @@ const app = express()
         console.log(`makeing the reervation for ${req.body.name}`)
         const reservation = await makeReservation(req.body.name, count, req.body.showID)
 
-        res.json({ success: true, showID: req.body.showID, ...reservation })
+        res.json({ success: true, showID: req.body.showID, ...reservation})
 
     })
     .get('/', async (req, res) => {
